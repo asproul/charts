@@ -18,6 +18,12 @@ metadata:
     {{- end }}
   {{- end }}
 spec:
+  {{- if eq .Values.router.service.type "LoadBalancer" }}
+  type: "LoadBalancer"
+  externalTrafficPolicy: "Cluster"
+  {{- else }}
+  type: "ClusterIP"
+  {{- end }}
   ports:
     - name: http
       port: {{ .Values.router.httpPort }}

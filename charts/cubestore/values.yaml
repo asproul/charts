@@ -293,6 +293,10 @@ router:
     ##
     annotations: {}
 
+    ## Type of router service. Default: "ClusterIP"
+    ## e.g. for a GCP Internal LoadBalancer, set `type: LoadBalancer`
+    type: "ClusterIP"
+
   ## Extra environment variables to pass on to the pod. The value is evaluated as a template
   ## e.g:
   ## extraEnvVars:
